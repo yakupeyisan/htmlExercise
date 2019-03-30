@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Loader</title>
+	<style type="text/css">
+		.phone{
+			height: 380px;
+			width: 200px;
+			display: inline-block;
+			background-size:cover;
+			background-image: url(phone.png);
+			background-repeat: no-repeat;
+			overflow: auto;
+		}
+		.küpler {
+			margin:165px auto;
+			width: 50px;
+			height: 50px;
+			position: relative;
+			-webkit-transform: rotateZ(45deg);
+			transform: rotateZ(45deg);
+		}
+		.küp1{
+			background-color: #00bcd4;
+		}
+		.küp2{
+			background-color: #f44336;
+		}
+		.küp3{
+			background-color: #ff9800;
+		}
+		.küp4{
+			background-color: #4caf50;
+		}
+		.küpler .küp {
+			float: left;
+			width: 50%;
+			height: 50%;
+			position: relative;
+			-webkit-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			transform: scale(1.1); 
+		}
+		.küpler .küp:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			/*background-color: #333;*/
+			background: rgba(0, 0, 0, 0.7);
+			-webkit-animation: loader-animation 2.4s infinite linear both;
+			animation: loader-animation 2.4s infinite linear both;
+			-webkit-transform-origin: 100% 100%;
+			-ms-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+		}
+		.küpler .küp2 {
+			-webkit-transform: scale(1.1) rotateZ(90deg);
+			transform: scale(1.1) rotateZ(90deg);
+		}
+		.küpler .küp3 {
+			-webkit-transform: scale(1.1) rotateZ(180deg);
+			transform: scale(1.1) rotateZ(180deg);
+		}
+		.küpler .küp4 {
+			-webkit-transform: scale(1.1) rotateZ(270deg);
+			transform: scale(1.1) rotateZ(270deg);
+		}
+		.küpler .küp2:before {
+			-webkit-animation-delay: 0.3s;
+			animation-delay: 0.3s;
+		}
+		.küpler .küp3:before {
+			-webkit-animation-delay: 0.6s;
+			animation-delay: 0.6s; 
+		}
+		.küpler .küp4:before {
+			-webkit-animation-delay: 0.9s;
+			animation-delay: 0.9s;
+		}
+		@-webkit-keyframes loader-animation {
+			0%, 10% 
+			{
+				-webkit-transform: perspective(140px) rotateX(-180deg);
+				transform: perspective(140px) rotateX(-180deg);
+				opacity: 0; 
+			} 
+			25%, 
+			75% 
+			{
+				-webkit-transform: perspective(140px) rotateX(0deg);
+				transform: perspective(140px) rotateX(0deg);
+				opacity: 1; 
+			} 
+			90%, 
+			100% 
+			{
+				-webkit-transform: perspective(140px) rotateY(180deg);
+				transform: perspective(140px) rotateY(180deg);
+				opacity: 0; 
+			} 
+		}
+
+		@keyframes loader-animation 
+		{
+			0%, 
+			10% 
+			{
+				-webkit-transform: perspective(140px) rotateX(-180deg);
+				transform: perspective(140px) rotateX(-180deg);
+				opacity: 0; 
+			} 
+			25%, 
+			75% 
+			{
+				-webkit-transform: perspective(140px) rotateX(0deg);
+				transform: perspective(140px) rotateX(0deg);
+				opacity: 1; 
+			} 
+			90%, 
+			100% 
+			{
+				-webkit-transform: perspective(140px) rotateY(180deg);
+				transform: perspective(140px) rotateY(180deg);
+				opacity: 0; 
+			}
+		}
+
+		/*Animasyon 2*/
+
+		.kareler {
+			width: 50px;
+			height: 50px;
+			margin:165px auto;
+		}
+
+		.kare1{
+			background-color: #00bcd4;
+		}
+		.kare2{
+			background-color: #f44336;
+		}
+		.kare3{
+			background-color: #ff9800;
+		}
+		.kare4{
+			background-color: #4caf50;
+		}
+		.kare5{
+			background-color: #a72abd;
+		}
+		.kare6{
+			background-color: #ea2c6d;
+		}
+		.kare7{
+			background-color: #3C4858;
+		}
+		.kare8{
+			background-color: #999999;
+		}
+		.kare9{
+			background-color: #d6d8db;
+		}
+
+		.kareler .kare {
+			width: 33%;
+			height: 33%;
+			float: left;
+			-webkit-animation: kareAnimasyon 1.3s infinite ease-in-out;
+			animation: kareAnimasyon 1.3s infinite ease-in-out; 
+		}
+		.kareler .kare1 {
+			-webkit-animation-delay: 0.2s;
+			animation-delay: 0.2s; 
+		}
+		.kareler .kare2 {
+			-webkit-animation-delay: 0.3s;
+			animation-delay: 0.3s; 
+		}
+		.kareler .kare3 {
+			-webkit-animation-delay: 0.4s;
+			animation-delay: 0.4s; 
+		}
+		.kareler .kare4 {
+			-webkit-animation-delay: 0.1s;
+			animation-delay: 0.1s; 
+		}
+		.kareler .kare5 {
+			-webkit-animation-delay: 0.2s;
+			animation-delay: 0.2s; 
+		}
+		.kareler .kare6 {
+			-webkit-animation-delay: 0.3s;
+			animation-delay: 0.3s; 
+		}
+		.kareler .kare7 {
+			-webkit-animation-delay: 0s;
+			animation-delay: 0s; 
+		}
+		.kareler .kare8 {
+			-webkit-animation-delay: 0.1s;
+			animation-delay: 0.1s; 
+		}
+		.kareler .kare9 {
+			-webkit-animation-delay: 0.2s;
+			animation-delay: 0.2s; 
+		}
+
+		@-webkit-keyframes kareAnimasyon 
+		{
+			0%, 
+			70%, 
+			100% {
+				-webkit-transform: scale3D(1, 1, 1);
+				transform: scale3D(1, 1, 1);
+			} 
+			35% 
+			{
+				-webkit-transform: scale3D(0, 0, 1);
+				transform: scale3D(0, 0, 1); 
+			}
+		}
+
+		@keyframes kareAnimasyon 
+		{
+			0%, 
+			70%, 
+			100% 
+			{
+				-webkit-transform: scale3D(1, 1, 1);
+				transform: scale3D(1, 1, 1);
+			} 
+			35% 
+			{
+				-webkit-transform: scale3D(0, 0, 1);
+				transform: scale3D(0, 0, 1);
+			} 
+		}
+		.yuvarlaklar {
+			margin: 165px auto;
+			width: 50px;
+			height: 50px;
+			position: relative;
+			text-align: center;
+
+			-webkit-animation: yuvarlakDonus 2.0s infinite linear;
+			animation: yuvarlakDonus 2.0s infinite linear;
+		}
+
+		.yuvarlak1, .yuvarlak2{
+			width: 60%;
+			height: 60%;
+			display: inline-block;
+			position: absolute;
+			top: 0;			
+			background-color: #00bcd4;
+			border-radius: 100%;
+
+			-webkit-animation: yuvarlakAnimasyon 2.0s infinite ease-in-out;
+			animation: yuvarlakAnimasyon 2.0s infinite ease-in-out;
+		}
+
+		.yuvarlak2 {
+			top: auto;
+			bottom: 0;
+			background-color: #f44336;
+			-webkit-animation-delay: -1.0s;
+			animation-delay: -1.0s;
+		}
+
+		@-webkit-keyframes yuvarlakDonus { 100% { -webkit-transform: rotate(360deg) }}
+		@keyframes yuvarlakDonus { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+		@-webkit-keyframes yuvarlakAnimasyon {
+			0%, 100% { -webkit-transform: scale(0.0) }
+			50% { -webkit-transform: scale(1.0) }
+		}
+
+		@keyframes yuvarlakAnimasyon {
+			0%, 100% { 
+				transform: scale(0.0);
+				-webkit-transform: scale(0.0);
+				} 50% { 
+					transform: scale(1.0);
+					-webkit-transform: scale(1.0);
+				}
+			}
+
+
+			/*animasyon 4*/
+
+			.kasa {
+				margin: 165px auto;
+				width: 50px;
+				height: 40px;
+			}
+
+			.kasa > div {
+				background-color: #00bcd4;
+				height: 100%;
+				width: 6px;
+				display: inline-block;
+
+				-webkit-animation: animasyon 1.2s infinite ease-in-out;
+				animation: animasyon 1.2s infinite ease-in-out;
+			}
+
+			.kasa .sekil2 {
+				background-color: #f44336;
+				-webkit-animation-delay: -1.1s;
+				animation-delay: -1.1s;
+			}
+
+			.kasa .sekil3 {
+				background-color: #ff9800;
+				-webkit-animation-delay: -1.0s;
+				animation-delay: -1.0s;
+			}
+
+			.kasa .sekil4 {
+				-webkit-animation-delay: -0.9s;
+				animation-delay: -0.9s;
+			}
+
+			.kasa .sekil5 {
+				background-color: #4caf50;
+				-webkit-animation-delay: -0.8s;
+				animation-delay: -0.8s;
+			}
+
+			@-webkit-keyframes animasyon {
+				0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+				20% { -webkit-transform: scaleY(1.0) }
+			}
+
+			@keyframes animasyon {
+				0%, 40%, 100% { 
+					transform: scaleY(0.4);
+					-webkit-transform: scaleY(0.4);
+					}  20% { 
+						transform: scaleY(1.0);
+						-webkit-transform: scaleY(1.0);
+					}
+				}
+			</style>
+		</head>
+		<body>
+			<div class="phone">
+				<div class="küpler">
+					<div class="küp1 küp"></div>
+					<div class="küp2 küp"></div>
+					<div class="küp4 küp"></div>
+					<div class="küp3 küp"></div>
+				</div>
+			</div>
+			<div class="phone">
+				<div class="kareler">
+					<div class="kare kare1"></div>
+					<div class="kare kare2"></div>
+					<div class="kare kare3"></div>
+					<div class="kare kare4"></div>
+					<div class="kare kare5"></div>
+					<div class="kare kare6"></div>
+					<div class="kare kare7"></div>
+					<div class="kare kare8"></div>
+					<div class="kare kare9"></div>
+				</div>
+			</div>
+			<div class="phone">
+				<div class="yuvarlaklar">
+					<div class="yuvarlak1"></div>
+					<div class="yuvarlak2"></div>
+				</div>
+			</div>
+			<div class="phone">
+				<div class="kasa">
+					<div class="sekil1"></div>
+					<div class="sekil2"></div>
+					<div class="sekil3"></div>
+					<div class="sekil4"></div>
+					<div class="sekil5"></div>
+				</div>
+			</div>
+		</body>
+		</html>
