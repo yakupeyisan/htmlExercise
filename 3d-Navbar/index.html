@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(52, 58, 64, 0.4);
+        }
+        .navbar{
+            display: inline-block;
+            padding: 5px;
+            background: #343a40;
+        }
+        .navbar>ul{
+            font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Arial, Helvetica, sans-serif;
+            list-style: none;
+            display: inline-block;
+            color: #fff0f0 ;
+        }
+        .navbar>ul>li{
+            border-radius: 5px;
+            float: left;
+            margin: .25rem;
+        }
+        .navbar>ul>li div{
+            border-radius: 5px;
+            position: absolute;
+            padding: 1rem;
+            transition: .3s;
+            cursor: pointer;
+        }
+        .navbar>ul>li .before{
+            color: #fff;
+            z-index: 10;
+            background: rgba(84, 95, 103,0.3);
+        }
+        .navbar>ul>li .after{
+            position: relative;
+            background: #ff9800;
+            opacity: 0;
+        }
+        .navbar>ul>li:hover>.before{
+            -webkit-transform: rotateX(-90deg);
+            transition: .5s;
+            -ms-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+        }
+        .navbar>ul>li:hover>.after{
+            opacity: 1;
+            transition: 1s;
+            -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+
+
+
+        .background{
+            height: 100vh;
+            -webkit-animation: backgroundanimation 2.4s infinite linear both;
+            animation: backgroundanimation 2.4s infinite linear both;
+            -webkit-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+        @keyframes backgroundanimation {
+            0%,25%  {
+                background: linear-gradient(to right, #ff9800 , #e91e63);
+            }
+            25%,50%  {
+                background: linear-gradient(to bottom, #ff9800 , #e91e63);
+            }
+            50%,75%  {
+                background: linear-gradient(to left, #ff9800 , #e91e63);
+            }
+            75%,90%  {
+                background: linear-gradient(to top, #ff9800 , #e91e63);
+            }
+            90%,100% {
+                background: linear-gradient(to right, #ff9800 , #e91e63);
+            }
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div class="background"></div>
+<div class="main">
+    <nav class="navbar">
+        <ul>
+            <li>
+                <div class="before">Home</div>
+                <div class="after">Home</div>
+            </li>
+            <li>
+                <div class="before">Product</div>
+                <div class="after">Product</div>
+            </li>
+            <li>
+                <div class="before">About</div>
+                <div class="after">About</div>
+            </li>
+            <li>
+                <div class="before">Contact</div>
+                <div class="after">Contact</div>
+            </li>
+        </ul>
+    </nav>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $("li").hover(function (){
+       $(this).css("display","block");
+    });
+</script>
+</body>
+</html>
