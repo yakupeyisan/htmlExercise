@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #10131c;
+        }
+        
+        .navigation {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            background: #212532;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            transition-delay: 0.8s;
+        }
+        
+        .navigation.active {
+            width: 200px;
+            height: 200px;
+            background: #212532;
+            transition-delay: 0s;
+        }
+        
+        .navigation>span {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+            transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
+            transition-delay: calc(0.1s * var(--i));
+        }
+        
+        .navigation.active span {
+            transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+            background: #333849;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .navigation span i {
+            transition: 1.5s;
+            font-size: 0px;
+        }
+        
+        .navigation.active span i {
+            color: #fff;
+            font-size: 30px;
+        }
+        
+        .navigation.active span:hover i {
+            transition: .3s;
+            color: #ff9800;
+            filter: drop-shadow(0 0 2px #ff9800) drop-shadow(0 0 5px #ff9800) drop-shadow(0 0 15px #ff9800);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <span style="--i:0;--x:-1;--y:0 "><i class="fa-solid fa-4"></i></span>
+        <span style="--i:1;--x:1 ;--y:0 "><i class="fa-solid fa-6"></i></span>
+        <span style="--i:2;--x:0 ;--y:-1"><i class="fa-solid fa-2"></i></span>
+        <span style="--i:3;--x:0 ;--y:1 "><i class="fa-solid fa-8"></i></span>
+        <span style="--i:4;--x:1 ;--y:1 "><i class="fa-solid fa-9"></i></span>
+        <span style="--i:5;--x:-1;--y:-1"><i class="fa-solid fa-1"></i></span>
+        <span style="--i:6;--x:0 ;--y:0 "><i class="fa-solid fa-5"></i></span>
+        <span style="--i:7;--x:-1;--y:1 "><i class="fa-solid fa-7"></i></span>
+        <span style="--i:8;--x:1 ;--y:-1"><i class="fa-solid fa-3"></i></span>
+    </div>
+    <script>
+        let navigation = document.querySelector('.navigation');
+        navigation.onclick = function() {
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
